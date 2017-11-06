@@ -56,7 +56,7 @@
         <p class="lead">You'll also find some basic information about your account below. If information isn't correct, contact a mentor in order to reset a part of it.</p>
         <ul class="list-unstyled">
           <script>
-            firebase.auth().onAuthStateChanged(function(user)) {
+            firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
               document.body.innerHTML = 'Name' + user.displayName + '<br> Email' + user.email + '<br> Phone Number' + user.phoneNumber;
             } else {
@@ -71,8 +71,8 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js">
-    </script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
