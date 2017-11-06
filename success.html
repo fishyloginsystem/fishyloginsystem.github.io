@@ -1,67 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>fishyLogin</title>
+  <title>fishyLogin</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <style>
+  <!-- Custom styles for this template -->
+  <style>
+    body {
+      padding-top: 54px;
+    }
+
+    @media (min-width: 992px) {
       body {
-        padding-top: 54px;
+        padding-top: 56px;
       }
-      @media (min-width: 992px) {
-        body {
-          padding-top: 56px;
-        }
-      }
+    }
+  </style>
 
-    </style>
+</head>
 
-  </head>
+<body>
 
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">fishyLogin</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h1 class="mt-5">fishyLogin</h1>
-          <p class="lead">You've logged into the fishyLogin console. Use the ticker below to track your time in the robotics room. </p>
-          <ul class="list-unstyled">
-          </ul>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+          </li>
+        </ul>
       </div>
     </div>
+  </nav>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">fishyLogin</h1>
+        <p class="lead">You've logged into the fishyLogin console. Use the ticker below to track your time in the robotics room. </p>
+        <br>
+        <p class="lead">You'll also find some basic information about your account below. If information isn't correct, contact a mentor in order to reset a part of it.</p>
+        <ul class="list-unstyled">
+          <script>
+            firebase.auth().onAuthStateChanged(function(user)) {
+            if (user) {
+              document.body.innerHTML = 'Name' + user.displayName + '<br> Email' + user.email + '<br> Phone Number' + user.phoneNumber;
+            } else {
+              console.log("NO USER SIGNED IN CRASH ERROR GET OUT GET OUT GET OUT");
+            }
+            });
+          </script>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  < script src="vendor/jquery/jquery.min.js">
+    </script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  </body>
+</body>
 
 </html>
