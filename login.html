@@ -53,8 +53,8 @@
     signInSuccessUrl: 'success.html',
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     ],
     // Terms of service url.
     tosUrl: '<your-tos-url>'
@@ -91,8 +91,6 @@
           <h1 class="mt-5">Login/Register Below.</h1>
           <p class="lead">If you already are signed in on this device, Google Smart Lock should detect it and allow you to sign in using Google. If not, you can continue to sign in with Google and verify your account, or login with email and set up a brand new fishyLogin account.</p>
           <ul class="list-unstyled">
-            <li>Bootstrap 4.0.0-beta</li>
-            <li>jQuery 3.2.1</li>
             <li><div id="firebaseui-auth-container"></div></li>
           </ul>
         </div>
