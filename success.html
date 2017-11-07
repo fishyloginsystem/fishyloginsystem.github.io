@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <script src="scrips.js"></script>
 
   <title>fishyLogin</title>
 
@@ -52,8 +53,6 @@
         </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-          </li>
         </ul>
       </div>
     </div>
@@ -68,18 +67,7 @@
         <br>
         <p class="lead">You'll also find some basic information about your account below. If information isn't correct, contact a mentor in order to reset a part of it.</p>
         <ul class="list-unstyled">
-          <script>
-          var currentUid = null;
-          firebase.auth().onAuthStateChanged(function(user) {
-           if (user && user.uid != currentUid) {
-            currentUid = user.uid;
-            document.body.innerHTML = 'Full Name: ' +user.displayName+'<br> Email: '+user.email+'<br>';
-           } else {
-            currentUid = null;
-            console.log("no user signed in");
-           }
-          });
-          </script>
+          <li id="basicInfo"></li>
         </ul>
       </div>
     </div>
