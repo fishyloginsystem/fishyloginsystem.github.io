@@ -40,7 +40,7 @@ function loadFirebase() {
 function pushDataToDatabase() {
     var data = {
         name: user.displayName,
-        clockIn: valueOfClockIn;
+        clockIn: valueOfClockIn,
         clockOut: valueOfClockOut
     }
 
