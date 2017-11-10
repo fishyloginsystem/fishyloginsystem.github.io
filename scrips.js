@@ -43,6 +43,7 @@ function pushDataToDatabase() {
         clockIn: valueOfClockIn,
         clockOut: valueOfClockOut
     }
+}
 
     function getTime() {
         var now = new Date();
