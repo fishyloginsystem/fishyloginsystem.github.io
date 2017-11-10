@@ -33,7 +33,6 @@ function loadFirebase() {
         messagingSenderId: "463408364435"
     };
     firebase.initializeApp(config);
-
     var database = firebase.database();
     var ref = database.ref('clockedData');
 }
@@ -42,7 +41,7 @@ function pushDataToDatabase() {
     var data = {
         name: user.displayName,
         clockIn: valueOfClockIn;
-        clockOut: valueOfClockOut;
+        clockOut: valueOfClockOut
     }
 
     function getTime() {
