@@ -47,27 +47,27 @@ function pushDataToDatabase() {
     }
 }
 
-    function getTime() {
-        var now = new Date();
-        var h = now.getHours();
-        var m = now.getMinutes();
-        var s = now.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        return h + ":"+ m + ":" s;
-    }
+function getTime() {
+    var now = new Date();
+    var h = now.getHours();
+    var m = now.getMinutes();
+    var s = now.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    return h + ":" + m + ":" + s;
+}
 
-    function checkTime(time) {
-        if (time < 10) {
-            time = "0" + time;
-        }
-        return time;
+function checkTime(time) {
+    if (time < 10) {
+        time = "0" + time;
     }
+    return time;
+}
 
-    function buttonPushedForClockInTime() {
-        var valueOfClockIn = getTime();
-    }
+function buttonPushedForClockInTime() {
+    var valueOfClockIn = getTime();
+}
 
-    function buttonPushedForClockOutTime() {
-        var valueOfClockOut = getTime();
-    }
+function buttonPushedForClockOutTime() {
+    var valueOfClockOut = getTime();
+}
