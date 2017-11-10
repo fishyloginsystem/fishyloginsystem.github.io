@@ -34,9 +34,16 @@ function loadFirebase() {
         storageBucket: "fishylogin-6cdac.appspot.com",
         messagingSenderId: "463408364435"
     };
+    var secondaryAppConfig = {
+      apiKey: "AIzaSyAjiFR2ZZTtSKYCbW7hjbuClkLDYE6gsN4",
+      authDomain: "fishytime-4426f.firebaseapp.com",
+      databaseURL: "https://fishytime-4426f.firebaseio.com",
+      storageBucket: "",
+};
     firebase.initializeApp(config);
-    var database = firebase.database();
-    var ref = database.ref('clockedData');
+    var secondary = firebase.initializeApp(secondaryAppConfig, "secondary");
+    var secondaryDatabase = secondary.database();
+    var ref = secondaryDatabase.ref('clockedData');
 }
 
 function pushDataToDatabase() {
