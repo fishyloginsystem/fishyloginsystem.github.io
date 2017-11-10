@@ -48,16 +48,17 @@ function loadFirebase() {
 }
 
 function pushDataToDatabase() {
+    var currentUid2 = null;
     firebase.auth().onAuthStateChanged(function(user) {
-            if (user && user.uid != currentUid) {
-                currentUid = user.uid;
+            if (user && user.uid != currentUid2) {
+                currentUid2 = user.uid;
                 var data = {
                     name: user.displayName,
                     clockIn: valueOfClockIn,
                     clockOut: valueOfClockOut
                 }
             } else {
-                currentUid = null;
+                currentUid2 = null;
                 console.log("no user signed in");
             }
         });
