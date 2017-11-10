@@ -52,7 +52,6 @@ function pushDataToDatabase() {
         var s = now.getSeconds();
         m = checkTime(m);
         s = checkTime(s);
-        document.getElementById("clock").innerHTML = h + ':' + m + ':' + s;
         setTimeout("getTime()", 1000);
     }
 
