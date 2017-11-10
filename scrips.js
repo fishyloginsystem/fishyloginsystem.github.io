@@ -14,6 +14,7 @@ function basicInfoFunction() {
     });
 }
 window.addEventListener("load", function() {
+    loadFirebase();
     basicInfoFunction();
     var buttonIn = document.getElementById('in');
     var buttonOut = document.getElementById('out');
