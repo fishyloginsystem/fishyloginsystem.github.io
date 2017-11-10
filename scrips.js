@@ -60,7 +60,7 @@ function pushDataToDatabase() {
                 currentUid = null;
                 console.log("no user signed in");
             }
-        }
+        });
     }
 
     function getTime() {
