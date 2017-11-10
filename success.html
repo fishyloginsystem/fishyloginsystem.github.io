@@ -31,18 +31,6 @@
   </style>
 
   <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDrBcG17k4_2rZyyU7NuhXRITDuOcMj_eA",
-      authDomain: "fishylogin-6cdac.firebaseapp.com",
-      databaseURL: "https://fishylogin-6cdac.firebaseio.com",
-      projectId: "fishylogin-6cdac",
-      storageBucket: "fishylogin-6cdac.appspot.com",
-      messagingSenderId: "463408364435"
-    };
-    firebase.initializeApp(config);
-  </script>
 </head>
 
 <body>
@@ -73,11 +61,15 @@
         <p class="lead">You'll also find some basic information about your account below. If information isn't correct, contact a mentor in order to reset a part of it.</p>
         <ul class="list-unstyled">
           <li id="basicInfo"></li>
-          <li><a href="login.html"><button class="buttongreen"><span>Clock In </span></button></a></li>
+          <li><a href=""><button id = "in" class="buttongreen"><span>Clock In </span></button></a></li>
           <br>
           <br>
           <br>
-          <li><a href="login.html"><button class="buttonorange"><span>Clock Out </span></button></a></li>
+          <li><button id = "out" class="buttonorange"><span>Clock Out </span></button></li>
+          <br>
+          <br>
+          <br>
+          <li><button id = "submit" class="buttonblue"><span>Submit</span></button></li>
         </ul>
       </div>
     </div>
