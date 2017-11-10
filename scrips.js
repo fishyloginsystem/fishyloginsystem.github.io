@@ -37,7 +37,6 @@ function loadFirebase() {
     var database = firebase.database();
     var ref = database.ref('clockedData');
 }
-}
 
 function pushDataToDatabase() {
     var data = {
