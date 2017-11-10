@@ -36,11 +36,11 @@ function loadFirebase() {
         messagingSenderId: "463408364435"
     };
     var secondaryAppConfig = {
-      apiKey: "AIzaSyAjiFR2ZZTtSKYCbW7hjbuClkLDYE6gsN4",
-      authDomain: "fishytime-4426f.firebaseapp.com",
-      databaseURL: "https://fishytime-4426f.firebaseio.com",
-      storageBucket: "",
-};
+        apiKey: "AIzaSyAjiFR2ZZTtSKYCbW7hjbuClkLDYE6gsN4",
+        authDomain: "fishytime-4426f.firebaseapp.com",
+        databaseURL: "https://fishytime-4426f.firebaseio.com",
+        storageBucket: "",
+    };
     firebase.initializeApp(config);
     var secondary = firebase.initializeApp(secondaryAppConfig, "secondary");
     var secondaryDatabase = secondary.database();
@@ -48,34 +48,42 @@ function loadFirebase() {
 }
 
 function pushDataToDatabase() {
-    var data = {
-        name: user.displayName,
-        clockIn: valueOfClockIn,
-        clockOut: valueOfClockOut
+    firebase.auth().onAuthStateChanged(function(user) {
+            if (user && user.uid != currentUid) {
+                currentUid = user.uid;
+                var data = {
+                    name: user.displayName,
+                    clockIn: valueOfClockIn,
+                    clockOut: valueOfClockOut
+                }
+            } else {
+                currentUid = null;
+                console.log("no user signed in");
+            }
+        }
     }
-}
 
-function getTime() {
-    var now = new Date();
-    var h = now.getHours();
-    var m = now.getMinutes();
-    var s = now.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    return h + ":" + m + ":" + s;
-}
-
-function checkTime(time) {
-    if (time < 10) {
-        time = "0" + time;
+    function getTime() {
+        var now = new Date();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        return h + ":" + m + ":" + s;
     }
-    return time;
-}
 
-function buttonPushedForClockInTime() {
-    var valueOfClockIn = getTime();
-}
+    function checkTime(time) {
+        if (time < 10) {
+            time = "0" + time;
+        }
+        return time;
+    }
 
-function buttonPushedForClockOutTime() {
-    var valueOfClockOut = getTime();
-}
+    function buttonPushedForClockInTime() {
+        var valueOfClockIn = getTime();
+    }
+
+    function buttonPushedForClockOutTime() {
+        var valueOfClockOut = getTime();
+    }
