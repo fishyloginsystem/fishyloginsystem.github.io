@@ -1,6 +1,8 @@
 var buttonIn = document.getElementById('in');
 var buttonOut = document.getElementById('out');
 var buttonSubmit = document.getElementById('submit');
+var valueOfClockIn;
+var valueOfClockOut;
 
 buttonIn.onClick = buttonPushedForClockInTime();
 buttonOut.onClick = buttonPushedForClockOutTime();
@@ -52,7 +54,7 @@ function pushDataToDatabase() {
         var s = now.getSeconds();
         m = checkTime(m);
         s = checkTime(s);
-        setTimeout("getTime()", 1000);
+        return h + ":"+ m + ":" s;
     }
 
     function checkTime(time) {
