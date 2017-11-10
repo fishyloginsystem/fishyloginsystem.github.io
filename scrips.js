@@ -1,12 +1,5 @@
-var buttonIn = document.getElementById('in');
-var buttonOut = document.getElementById('out');
-var buttonSubmit = document.getElementById('submit');
 var valueOfClockIn;
 var valueOfClockOut;
-
-buttonIn.onClick = buttonPushedForClockInTime();
-buttonOut.onClick = buttonPushedForClockOutTime();
-buttonSubmit.onClick = pushDataToDatabase();
 
 function basicInfoFunction() {
     var currentUid = null;
@@ -22,6 +15,13 @@ function basicInfoFunction() {
 }
 window.addEventListener("load", function() {
     basicInfoFunction();
+    var buttonIn = document.getElementById('in');
+    var buttonOut = document.getElementById('out');
+    var buttonSubmit = document.getElementById('submit');
+
+    buttonIn.onclick = buttonPushedForClockInTime();
+    buttonOut.onclick = buttonPushedForClockOutTime();
+    buttonSubmit.onclick = pushDataToDatabase();
 });
 
 function loadFirebase() {
