@@ -4,8 +4,6 @@ var ref = 0;
 var buttonIn = 0;
 var buttonOut = 0;
 var buttonSubmit = 0;
-var clockInString = " ";
-var clockOutString = " ";
 
 function basicInfoFunction() {
     var currentUid = null;
@@ -87,14 +85,12 @@ function getTime() {
 
 function buttonPushedForClockInTime() {
     valueOfClockIn = getTime();
-    clockInString = new Date(valueOfClockIn);
     console.log("in");
-    return clockInString;
+    return valueOfClockIn;
 }
 
 function buttonPushedForClockOutTime() {
     valueOfClockOut = getTime();
-    clockOutString = new Date(valueofClockOut);
     console.log("out");
-    return clockOutString;
+    return valueOfClockOut;
 }
