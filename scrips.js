@@ -85,8 +85,10 @@ function checkTime(time) {
 
 function buttonPushedForClockInTime() {
     var valueOfClockIn = getTime();
+    return valueOfClockIn;
 }
 
 function buttonPushedForClockOutTime() {
     var valueOfClockOut = getTime();
+    return valueOfClockOut;
 }
