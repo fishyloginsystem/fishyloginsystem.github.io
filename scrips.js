@@ -35,7 +35,7 @@ window.addEventListener("load", function() {
     }
     else {
       document.getElementById('submit').disabled = false;
-      buttonSubmit.onclick = pushDataToDatabase();
+      buttonSubmit.onclick = pushDataToDatabase;
     }
 });
 
