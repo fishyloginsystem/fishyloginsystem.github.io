@@ -101,7 +101,7 @@ function checkTime(time) {
 
 function buttonPushedForClockInTime() {
     var valueOfClockIn = getTime();
-    document.getElementById('buttonOut').disabled = false;
+    document.getElementById('out').disabled = false;
     return valueOfClockIn;
 }
 
@@ -109,7 +109,7 @@ function buttonPushedForClockOutTime() {
     var valueOfClockOut = getTime();
     if(valueOfClockIn = null)
     {
-      document.getElementById('buttonIn').disabled = true;
+      document.getElementById('in').disabled = true;
     }
     return valueOfClockOut;
 }
