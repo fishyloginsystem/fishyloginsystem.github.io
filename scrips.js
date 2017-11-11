@@ -113,6 +113,6 @@ function buttonPushedForClockOutTime() {
     {
       document.getElementById('in').disabled = true;
     }
-    console.log("off");
+    console.log("out");
     return valueOfClockOut;
 }
