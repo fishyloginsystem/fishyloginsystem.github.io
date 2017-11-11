@@ -88,18 +88,12 @@ function getTime() {
 
 function buttonPushedForClockInTime() {
     valueOfClockIn = getTime();
-    if (valueOfClockOut = 0) {
-        document.getElementById('out').disabled = false;
-    }
     console.log("in");
     return valueOfClockIn;
 }
 
 function buttonPushedForClockOutTime() {
     valueOfClockOut = getTime();
-    if (valueOfClockIn = 0) {
-        document.getElementById('in').disabled = true;
-    }
     console.log("out");
     return valueOfClockOut;
 }
