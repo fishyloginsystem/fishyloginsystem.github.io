@@ -103,6 +103,7 @@ function checkTime(time) {
 function buttonPushedForClockInTime() {
     valueOfClockIn = getTime();
     document.getElementById('out').disabled = false;
+    console.log("in");
     return valueOfClockIn;
 }
 
@@ -112,5 +113,6 @@ function buttonPushedForClockOutTime() {
     {
       document.getElementById('in').disabled = true;
     }
+    console.log("off");
     return valueOfClockOut;
 }
