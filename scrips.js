@@ -1,12 +1,12 @@
-var valueOfClockIn;
-var valueOfClockOut;
-var ref;
-var name;
-var clockIn;
-var clockOut;
-var buttonIn;
-var buttonOut;
-var buttonSubmit;
+var valueOfClockIn = 0;
+var valueOfClockOut = 0;
+var ref = 0;
+var name = " ";
+var clockIn = 0;
+var clockOut = 0;
+var buttonIn = 0;
+var buttonOut = 0;
+var buttonSubmit = 0;
 
 function basicInfoFunction() {
     var currentUid = null;
