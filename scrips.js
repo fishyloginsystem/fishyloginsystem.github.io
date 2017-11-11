@@ -1,5 +1,6 @@
 var valueOfClockIn;
 var valueOfClockOut;
+var ref;
 
 function basicInfoFunction() {
     var currentUid = null;
@@ -44,47 +45,48 @@ function loadFirebase() {
     firebase.initializeApp(config);
     var secondary = firebase.initializeApp(secondaryAppConfig, "secondary");
     var secondaryDatabase = secondary.database();
-    var ref = secondaryDatabase.ref('clockedData');
+    ref = secondaryDatabase.ref('clockedData');
 }
 
 function pushDataToDatabase() {
     var currentUid2 = null;
     firebase.auth().onAuthStateChanged(function(user) {
-            if (user && user.uid != currentUid2) {
-                currentUid2 = user.uid;
-                var data = {
-                    name: user.displayName,
-                    clockIn: valueOfClockIn,
-                    clockOut: valueOfClockOut
-                }
-            } else {
-                currentUid2 = null;
-                console.log("no user signed in");
+        if (user && user.uid != currentUid2) {
+            currentUid2 = user.uid;
+            var data = {
+                name: user.displayName,
+                clockIn: valueOfClockIn,
+                clockOut: valueOfClockOut
             }
-        });
-    }
-
-    function getTime() {
-        var now = new Date();
-        var h = now.getHours();
-        var m = now.getMinutes();
-        var s = now.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        return h + ":" + m + ":" + s;
-    }
-
-    function checkTime(time) {
-        if (time < 10) {
-            time = "0" + time;
+            ref.push(data);
+        } else {
+            currentUid2 = null;
+            console.log("no user signed in");
         }
-        return time;
-    }
+    });
+}
 
-    function buttonPushedForClockInTime() {
-        var valueOfClockIn = getTime();
-    }
+function getTime() {
+    var now = new Date();
+    var h = now.getHours();
+    var m = now.getMinutes();
+    var s = now.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    return h + ":" + m + ":" + s;
+}
 
-    function buttonPushedForClockOutTime() {
-        var valueOfClockOut = getTime();
+function checkTime(time) {
+    if (time < 10) {
+        time = "0" + time;
     }
+    return time;
+}
+
+function buttonPushedForClockInTime() {
+    var valueOfClockIn = getTime();
+}
+
+function buttonPushedForClockOutTime() {
+    var valueOfClockOut = getTime();
+}
