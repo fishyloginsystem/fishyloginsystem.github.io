@@ -75,6 +75,7 @@ function pushDataToDatabase() {
                 clockOut: valueOfClockOut
             }
             ref.push(data);
+            console.log(valueOfClockIn);
         } else {
             currentUid2 = null;
             console.log("no user signed in");
