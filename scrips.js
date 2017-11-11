@@ -70,8 +70,8 @@ function pushDataToDatabase() {
             currentUid2 = user.uid;
             var data = {
                 name: user.displayName,
-                clockIn: valueOfClockIn,
-                clockOut: valueOfClockOut
+                clockIn: clockInString,
+                clockOut: clockOutString
             }
             ref.push(data);
             console.log(data.clockIn);
