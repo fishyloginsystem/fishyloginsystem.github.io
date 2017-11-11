@@ -4,6 +4,10 @@ var ref = 0;
 var buttonIn = 0;
 var buttonOut = 0;
 var buttonSubmit = 0;
+var unix;
+var readableDate;
+var clockOutString;
+var clockInString;
 
 function basicInfoFunction() {
     var currentUid = null;
@@ -79,18 +83,27 @@ function pushDataToDatabase() {
 }
 
 function getTime() {
-    var unix = Date.now();
+    unix = Date.now();
     return unix;
 }
 
 function buttonPushedForClockInTime() {
     valueOfClockIn = getTime();
+    clockInString = toReadableDate(getTime());
     console.log("in");
-    return valueOfClockIn;
+    return clockInString;
 }
+
 
 function buttonPushedForClockOutTime() {
     valueOfClockOut = getTime();
+    clockOutString = toReadableDate(getTime());
     console.log("out");
-    return valueOfClockOut;
+    return clockOutString;
+}
+
+function toReadableDate(dateInMilliseconds)
+{
+    readableDate = new Date(dateInMilliseconds).toUTCString();
+    return readableDate;
 }
