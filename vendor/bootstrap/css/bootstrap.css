@@ -8411,6 +8411,11 @@ a.text-dark:focus, a.text-dark:hover {
   opacity: 1;
   right: 0;
 }
+
+.buttongreen:disabled span:after {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 .buttonorange {
   display: inline-block;
   border-radius: 4px;
@@ -8451,6 +8456,10 @@ a.text-dark:focus, a.text-dark:hover {
   opacity: 1;
   right: 0;
 }
+.buttonorange:disabled span:after {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 .buttonblue {
   display: inline-block;
   border-radius: 4px;
@@ -8490,6 +8499,10 @@ a.text-dark:focus, a.text-dark:hover {
 .buttonblue:hover span:after {
   opacity: 1;
   right: 0;
+}
+.buttonblue:disabled span:after {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 input[type=text] {
     width: 130px;
