@@ -4,6 +4,9 @@ var ref;
 var name;
 var clockIn;
 var clockOut;
+var buttonIn;
+var buttonOut;
+var buttonSubmit;
 
 function basicInfoFunction() {
     var currentUid = null;
@@ -20,13 +23,20 @@ function basicInfoFunction() {
 window.addEventListener("load", function() {
     loadFirebase();
     basicInfoFunction();
-    var buttonIn = document.getElementById('in');
-    var buttonOut = document.getElementById('out');
-    var buttonSubmit = document.getElementById('submit');
+    buttonIn = document.getElementById('in');
+    buttonOut = document.getElementById('out');
+    buttonSubmit = document.getElementById('submit');
 
     buttonIn.onclick = buttonPushedForClockInTime();
     buttonOut.onclick = buttonPushedForClockOutTime();
-    buttonSubmit.onclick = pushDataToDatabase();
+    if(valueOfClockOut==null&&valeuOfClockIn==null)
+    {
+      document.getElementById('submit').disabled = true;
+    }
+    else {
+      document.getElementById('submit').disabled = false;
+      buttonSubmit.onclick = pushDataToDatabase();
+    }
 });
 
 function loadFirebase() {
@@ -91,10 +101,15 @@ function checkTime(time) {
 
 function buttonPushedForClockInTime() {
     var valueOfClockIn = getTime();
+    document.getElementById('buttonOut').disable = false;
     return valueOfClockIn;
 }
 
 function buttonPushedForClockOutTime() {
     var valueOfClockOut = getTime();
+    if(valueOfClockIn = null)
+    {
+      document.getElementById('buttonIn').disable = true;
+    }
     return valueOfClockOut;
 }
