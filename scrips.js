@@ -27,8 +27,8 @@ window.addEventListener("load", function() {
     buttonOut = document.getElementById('out');
     buttonSubmit = document.getElementById('submit');
 
-    buttonIn.onclick = buttonPushedForClockInTime();
-    buttonOut.onclick = buttonPushedForClockOutTime();
+    buttonIn.onclick = 'buttonPushedForClockInTime();';
+    buttonOut.onclick = 'buttonPushedForClockOutTime();';
     if(valueOfClockOut==null&&valeuOfClockIn==null)
     {
       document.getElementById('submit').disabled = true;
