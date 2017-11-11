@@ -1,9 +1,6 @@
 var valueOfClockIn = 0;
 var valueOfClockOut = 0;
 var ref = 0;
-var name = " ";
-var clockIn = " ";
-var clockOut = " ";
 var buttonIn = 0;
 var buttonOut = 0;
 var buttonSubmit = 0;
@@ -73,7 +70,7 @@ function pushDataToDatabase() {
                 clockOut: valueOfClockOut
             }
             ref.push(data);
-            console.log(valueOfClockIn);
+            console.log(data.clockIn);
         } else {
             currentUid2 = null;
             console.log("no user signed in");
