@@ -89,7 +89,7 @@ function getTime() {
     var s = now.getSeconds();
     m = checkTime(m);
     s = checkTime(s);
-    return h + ":" + m + ":" + s;
+    return h+":"+m+":"+s;
 }
 
 function checkTime(time) {
