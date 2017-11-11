@@ -100,13 +100,13 @@ function checkTime(time) {
 }
 
 function buttonPushedForClockInTime() {
-    var valueOfClockIn = getTime();
+    valueOfClockIn = getTime();
     document.getElementById('out').disabled = false;
     return valueOfClockIn;
 }
 
 function buttonPushedForClockOutTime() {
-    var valueOfClockOut = getTime();
+    valueOfClockOut = getTime();
     if(valueOfClockIn = null)
     {
       document.getElementById('in').disabled = true;
