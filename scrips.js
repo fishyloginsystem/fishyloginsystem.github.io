@@ -29,13 +29,11 @@ window.addEventListener("load", function() {
 
     buttonIn.onclick = buttonPushedForClockInTime;
     buttonOut.onclick = buttonPushedForClockOutTime;
-    if(valueOfClockOut==null&&valeuOfClockIn==null)
-    {
-      document.getElementById('submit').disabled = true;
-    }
-    else {
-      document.getElementById('submit').disabled = false;
-      buttonSubmit.onclick = pushDataToDatabase;
+    if (valueOfClockOut == null && valeuOfClockIn == null) {
+        document.getElementById('submit').disabled = true;
+    } else {
+        document.getElementById('submit').disabled = false;
+        buttonSubmit.onclick = pushDataToDatabase;
     }
 });
 
@@ -84,34 +82,23 @@ function pushDataToDatabase() {
 }
 
 function getTime() {
-    var now = new Date();
-    var h = now.getHours();
-    var m = now.getMinutes();
-    var s = now.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    return h+":"+m+":"+s;
-}
-
-function checkTime(time) {
-    if (time < 10) {
-        time = "0" + time;
-    }
-    return time;
+    var unix = Date.now();
+    return unix;
 }
 
 function buttonPushedForClockInTime() {
     valueOfClockIn = getTime();
-    document.getElementById('out').disabled = false;
+    if (valueOfClockOut = 0) {
+        document.getElementById('out').disabled = false;
+    }
     console.log("in");
     return valueOfClockIn;
 }
 
 function buttonPushedForClockOutTime() {
     valueOfClockOut = getTime();
-    if(valueOfClockIn = null)
-    {
-      document.getElementById('in').disabled = true;
+    if (valueOfClockIn = 0) {
+        document.getElementById('in').disabled = true;
     }
     console.log("out");
     return valueOfClockOut;
