@@ -1,6 +1,9 @@
 var valueOfClockIn;
 var valueOfClockOut;
 var ref;
+var name;
+var clockIn;
+var clockOut;
 
 function basicInfoFunction() {
     var currentUid = null;
@@ -46,6 +49,9 @@ function loadFirebase() {
     var secondary = firebase.initializeApp(secondaryAppConfig, "secondary");
     var secondaryDatabase = secondary.database();
     ref = secondaryDatabase.ref('clockedData');
+    clockIn = 0;
+    clockOut = 0;
+    name = "blank";
 }
 
 function pushDataToDatabase() {
