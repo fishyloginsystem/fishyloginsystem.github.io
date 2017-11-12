@@ -8,6 +8,8 @@ var unix;
 var readableDate;
 var clockOutString;
 var clockInString;
+var uncTotal;
+var totalTimeInRoom;
 
 function basicInfoFunction() {
     var currentUid = null;
@@ -68,10 +70,13 @@ function pushDataToDatabase() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user && user.uid != currentUid2) {
             currentUid2 = user.uid;
+            uncTotal = valueOfClockOut - valueOfClockIn;
+            totalTimeInRoom = msToTime(uncTotal);
             var data = {
                 name: user.displayName,
                 clockIn: clockInString,
-                clockOut: clockOutString
+                clockOut: clockOutString,
+                totalTime: totalTimeInRoom
             }
             ref.push(data);
             console.log(data.clockIn);
@@ -106,4 +111,17 @@ function toReadableDate(dateInMilliseconds)
 {
     readableDate = new Date(dateInMilliseconds).toUTCString();
     return readableDate;
+}
+
+function msToTime(duration) {
+    var milliseconds = parseInt((duration % 1000) / 100),
+        seconds = parseInt((duration / 1000) % 60),
+        minutes = parseInt((duration / (1000 * 60)) % 60),
+        hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
 }
