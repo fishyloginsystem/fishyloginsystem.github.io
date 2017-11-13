@@ -78,7 +78,6 @@ function pushDataToDatabase() {
                 clockOut: clockOutString,
                 totalTime: totalTimeInRoom
             }
-            ref.orderByChild("name");
             ref.push(data);
             console.log(data.clockIn);
         } else {
