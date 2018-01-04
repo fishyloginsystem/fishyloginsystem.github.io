@@ -96,6 +96,7 @@ function buttonPushedForClockInTime() {
     valueOfClockIn = getTime();
     clockInString = toReadableDate(getTime());
     console.log("in");
+    alert("You clocked in!");
     return clockInString;
 }
 
@@ -104,6 +105,7 @@ function buttonPushedForClockOutTime() {
     valueOfClockOut = getTime();
     clockOutString = toReadableDate(getTime());
     console.log("out");
+    alert("You clocked out!");
     return clockOutString;
 }
 
